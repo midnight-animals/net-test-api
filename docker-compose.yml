@@ -1,0 +1,12 @@
+version: "0.0"  # Adjust if necessary
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # Map container port 27017 to host port 27017
+    volumes:
+      - mongodb-data:/data/db  # Optional: Persist data between container restarts
+
+volumes:
+  mongodb-data:  # Optional: Persist data

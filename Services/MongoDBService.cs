@@ -12,9 +12,11 @@ public class MongoDBService
     public MongoDBService()
     {
         DotNetEnv.Env.Load();
-        MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("CONNECTION_URI"));
-        IMongoDatabase database = client.GetDatabase(Environment.GetEnvironmentVariable("DATABASE_NAME"));
-        _postCollection = database.GetCollection<Post>(Environment.GetEnvironmentVariable("COLLECTION_NAME"));
+
+        // Retrieve values from configuration
+        MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGODB_CONNECTION_URI"));
+        IMongoDatabase database = client.GetDatabase(Environment.GetEnvironmentVariable("MONGODB_DATABASE"));
+        _postCollection = database.GetCollection<Post>("posts");
     }
 
     public async Task CreateAsync(Post post)
