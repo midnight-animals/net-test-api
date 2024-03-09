@@ -8,15 +8,17 @@ namespace net_test_api.Services;
 public class MongoDBService
 {
     private readonly IMongoCollection<Post> _postCollection;
+    private readonly MongoClient client;
 
     public MongoDBService()
     {
         DotNetEnv.Env.Load();
 
         // Retrieve values from configuration
-        MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGODB_CONNECTION_URI"));
+        client = new MongoClient(Environment.GetEnvironmentVariable("MONGODB_CONNECTION_URI"));
         IMongoDatabase database = client.GetDatabase(Environment.GetEnvironmentVariable("MONGODB_DATABASE"));
         _postCollection = database.GetCollection<Post>("posts");
+
     }
 
     public async Task CreateAsync(Post post)
@@ -49,5 +51,29 @@ public class MongoDBService
         FilterDefinition<Post> filter = Builders<Post>.Filter.Eq("Id", id);
         await _postCollection.DeleteOneAsync(filter);
         return;
+    }
+
+    public async Task<Boolean> GetDatabaseStatus()
+    {
+        IMongoDatabase database = client.GetDatabase("admin");
+        try
+        {
+            var pingCommand = new BsonDocument { { "ping", 1 } };
+            var pingResult = await database.RunCommandAsync<BsonDocument>(pingCommand);
+
+            if (pingResult["ok"] == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error connecting to MongoDB: {ex.Message}");
+            return false;
+        }
     }
 }
