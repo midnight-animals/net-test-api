@@ -3,9 +3,9 @@ using net_test_api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<MongoDBService>();
-
 // Add services to the container.
+builder.Services.AddSingleton<MongoDBService>();
+builder.Services.AddSingleton<WordEntryService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
