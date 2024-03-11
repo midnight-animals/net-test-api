@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Tests",
+    "\\Tests\\Helper"
   ],
+  "SelectedNode": "\\net-test-api.sln",
   "PreviewInSolutionExplorer": false
 }
