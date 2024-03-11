@@ -28,3 +28,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+void ConfigureServices(IServiceCollection services) {
+    services.AddTransient<IWordEntryService, WordEntryService>();
+    services.AddHttpClient<IWordEntryService, WordEntryService>();
+}
