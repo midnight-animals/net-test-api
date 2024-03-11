@@ -8,7 +8,7 @@ using Moq;
 using System.Net.Security;
 using net_test_api.Tests.Fixture;
 
-namespace net_test_api.Tests
+namespace net_test_api.Tests.Controllers
 {
     public class WordEntryControllerTests
     {
