@@ -1,14 +1,14 @@
 using Xunit;
 using System.Net.Http;
 using System.Threading.Tasks;
-using net_test_api.Controllers;
+using OnlineDictionary.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Moq;
 using System.Net.Security;
-using net_test_api.Tests.Fixture;
+using OnlineDictionary.Tests.Fixture;
 
-namespace net_test_api.Tests.Controllers
+namespace OnlineDictionary.Tests.Controllers
 {
     public class WordEntryControllerTests
     {

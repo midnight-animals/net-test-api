@@ -1,4 +1,4 @@
-namespace net_test_api.Tests.Fixture
+namespace OnlineDictionary.Tests.Fixture
 {
     public static class WordEntryFixture
     {

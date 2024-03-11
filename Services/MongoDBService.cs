@@ -1,9 +1,9 @@
-using net_test_api.Models;
+using OnlineDictionary.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
-namespace net_test_api.Services;
+namespace OnlineDictionary.Services;
 
 public class MongoDBService
 {

@@ -1,5 +1,5 @@
-using net_test_api.Models;
-using net_test_api.Services;
+using OnlineDictionary.Models;
+using OnlineDictionary.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

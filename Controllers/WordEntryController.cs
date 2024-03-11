@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace net_test_api.Controllers;
+namespace OnlineDictionary.Controllers;
 
 [Controller]
 [Route("api/dictionary")]

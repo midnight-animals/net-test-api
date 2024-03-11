@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace net_test_api.Models;
+namespace OnlineDictionary.Models;
 
 public class Post {
     [BsonId]

@@ -1,9 +1,9 @@
 using System.Drawing;
 using Microsoft.AspNetCore.Mvc;
-using net_test_api.Models;
-using net_test_api.Services;
+using OnlineDictionary.Models;
+using OnlineDictionary.Services;
 
-namespace net_test_api.Controllers;
+namespace OnlineDictionary.Controllers;
 
 [Controller]
 [Route("api/[controller]")]

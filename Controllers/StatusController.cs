@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
-using net_test_api.Services;
+using OnlineDictionary.Services;
 
-namespace net_test_api.Controllers
+namespace OnlineDictionary.Controllers
 {
     [ApiController]
     [Route("[controller]")]

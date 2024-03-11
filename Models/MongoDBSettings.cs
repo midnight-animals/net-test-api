@@ -1,4 +1,4 @@
-namespace net_test_api.Models;
+namespace OnlineDictionary.Models;
 
 public class MongoDBSettings {
     public string ConnectionUri {set; get;} = null!;

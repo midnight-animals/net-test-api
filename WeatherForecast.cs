@@ -1,4 +1,4 @@
-namespace net_test_api;
+namespace OnlineDictionary;
 
 public class WeatherForecast
 {

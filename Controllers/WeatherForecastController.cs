@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace net_test_api.Controllers;
+namespace OnlineDictionary.Controllers;
 
 [ApiController]
 [Route("[controller]")]
