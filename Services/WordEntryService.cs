@@ -14,15 +14,18 @@ public interface IWordEntryService
 public class WordEntryService : IWordEntryService
 {
     private readonly IMongoCollection<WordEntry> _wordEntriesCollection;
-    private readonly HttpClient _httpClient;
-    public WordEntryService(HttpClient httpClient)
+    public WordEntryService()
     {
-        _httpClient = httpClient;
         DotNetEnv.Env.Load();
         MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGODB_CONNECTION_URI"));
         IMongoDatabase database = client.GetDatabase("online_dictionary");
         database.CreateCollection("word_entries");
         _wordEntriesCollection = database.GetCollection<WordEntry>("word_entries");
+    }
+
+    public WordEntryService(IMongoCollection<WordEntry> wordEntries)
+    {
+        _wordEntriesCollection = wordEntries;
     }
 
     public async Task<List<WordEntry>> GetAllWordsAsync()
