@@ -7,6 +7,7 @@ using System.Net;
 using Moq;
 using System.Net.Security;
 using OnlineDictionary.Tests.Fixture;
+using OnlineDictionary.Services;
 
 namespace OnlineDictionary.Tests.Controllers
 {

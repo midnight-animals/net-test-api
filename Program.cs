@@ -3,6 +3,8 @@ using OnlineDictionary.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+ConfigureServices(builder.Services);
+
 // Add services to the container.
 builder.Services.AddSingleton<MongoDBService>();
 builder.Services.AddSingleton<WordEntryService>();
@@ -32,4 +34,5 @@ app.Run();
 void ConfigureServices(IServiceCollection services) {
     services.AddTransient<IWordEntryService, WordEntryService>();
     services.AddHttpClient<IWordEntryService, WordEntryService>();
+    services.AddScoped<IWordEntryService, WordEntryService>();
 }
