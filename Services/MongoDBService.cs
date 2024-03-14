@@ -5,6 +5,7 @@ using MongoDB.Bson;
 
 namespace OnlineDictionary.Services;
 
+
 public class MongoDBService
 {
     private readonly IMongoCollection<Post> _postCollection;
@@ -14,9 +15,10 @@ public class MongoDBService
     {
         DotNetEnv.Env.Load();
 
+        Console.WriteLine(Environment.GetEnvironmentVariable("MONGODB_CONNECTION_URI"));
         // Retrieve values from configuration
         client = new MongoClient(Environment.GetEnvironmentVariable("MONGODB_CONNECTION_URI"));
-        IMongoDatabase database = client.GetDatabase(Environment.GetEnvironmentVariable("MONGODB_DATABASE"));
+        IMongoDatabase database = client.GetDatabase("test");
         _postCollection = database.GetCollection<Post>("posts");
 
     }

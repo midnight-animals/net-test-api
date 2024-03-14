@@ -7,6 +7,25 @@ services:
       - "27017:27017"  # Map container port 27017 to host port 27017
     volumes:
       - mongodb-data:/data/db  # Optional: Persist data between container restarts
+    networks:
+      - online-dictionary-network
+  
+  online-dictionary:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - mongodb
+    networks:
+      - online-dictionary-network
+    environment:
+      MONGODB_CONNECTION_URI: "mongodb://mongodb:27017?retryWrites=true&w=majority"
 
 volumes:
   mongodb-data:  # Optional: Persist data
+
+networks:
+  online-dictionary-network:
+    driver: bridge 
