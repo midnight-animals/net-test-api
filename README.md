@@ -10,6 +10,7 @@ Before running the app, make sure you have the following installed:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Dev Containers VSC Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
+## Getting Started
 To run the app locally using a devcontainer, follow these steps:
 
 1. Clone this repository to your local machine:
@@ -35,7 +36,7 @@ To run the app locally using a devcontainer, follow these steps:
     ```
 Access the app in your web browser at http://localhost:5052.
 
-Development
+## Development
 You can make changes to the code using any text editor or IDE.
 Changes made to the code will be automatically reflected in the running app.
 Press Ctrl+C in the terminal to stop the app.
