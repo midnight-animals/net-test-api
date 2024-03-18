@@ -19,13 +19,14 @@ To run the app locally using a devcontainer, follow these steps:
    git clone <repository_url>
    ```
 2. Open Visual Studio Code and navigate to the project directory:
+   You should open the project's folder as a VSC Workspace.
 
     ```bash
     cd online-dictionary
     code .
     ```
-3. Visual Studio Code will prompt you to reopen the project in a container. Click "Reopen in Container" to open the project in a devcontainer.
-4. Once the devcontainer is initialized, you can build and run the app using the integrated terminal in Visual Studio Code.
+4. Visual Studio Code will prompt you to reopen the project in a container. Click "Reopen in Container" to open the project in a devcontainer.
+5. Once the devcontainer is initialized, you can build and run the app using the integrated terminal in Visual Studio Code.
 
     ```bash
     # Build the app
